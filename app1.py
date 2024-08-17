@@ -108,7 +108,7 @@ def process_data(data, min_teff, max_teff):
     return filtered_data
 
 # Streamlit app
-st.title("Exoplanet Data Processor")
+st.title("EARTH - Exoplanet Assessment for Relative Terrestrial Habitability")
 
 data = input_data()
 if data is not None:
