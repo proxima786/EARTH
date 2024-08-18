@@ -7,6 +7,7 @@ from astropy.io import fits
 from astropy.table import Table
 import numpy as np
 # Function to add background image using CSS
+st. set_page_config(layout="wide")
 def add_background_image(image_base64):
     st.markdown(
         f"""
