@@ -1,8 +1,43 @@
 import streamlit as st
+from PIL import Image
+import base64
+import streamlit as st
 import pandas as pd
 from astropy.io import fits
 from astropy.table import Table
 import numpy as np
+# Function to add background image using CSS
+def add_background_image(image_base64):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpeg;base64,{image_base64}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Function to convert image to base64
+def img_to_base64(img_path):
+    with open(img_path, "rb") as img_file:
+        img_bytes = img_file.read()
+        img_base64 = base64.b64encode(img_bytes).decode()
+    return img_base64
+
+# Path to the local image
+image_path = "img.jpg"  # Replace with your image file
+
+# Convert the image to base64
+base64_image = img_to_base64(image_path)
+
+# Apply the background image
+add_background_image(base64_image)
+
 
 def input_data():
     st.write("Please ensure your data follows this sequence of columns: ")
