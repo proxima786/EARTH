@@ -42,7 +42,7 @@ add_background_image(base64_image)
 
 def input_data():
     st.write("Please ensure your data follows this sequence of columns: ")
-    st.write("Planet name, Host name, Orbital radius, Planet radius/diameter, Stellar radius, Diameter, Spectral type (optional), Effective temperature of star")
+    st.write("Planet name, Host name, Orbital radius, Planet radius/diameter, Stellar radius/Diameter, Spectral type (optional), Effective temperature of star")
 
     # File uploader widget in Streamlit
     uploaded_file = st.file_uploader("Select your data file", type=["csv", "txt", "fits"])
